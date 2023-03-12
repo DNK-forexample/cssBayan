@@ -22,6 +22,8 @@ h1 {
   border-bottom: 1px solid white;
   margin-bottom: 20px;
 }
+
+
 .accordion__line {
   display: flex;
   flex-direction: row;
@@ -30,6 +32,7 @@ h1 {
 }
 
 .accordion__cross {
+  cursor: pointer;
   display: none;
   width: 2%;
   height: 2%;
@@ -53,6 +56,22 @@ h1 {
   overflow: hidden;
  border-bottom: 1px solid #fff;
  box-shadow: 1px 2px 25px 1px rgb(153, 151, 151);
+}
+.accordion__link {
+  text-decoration: none;
+  cursor: pointer;
+  color: #fff;
+  transition: all .4s;
+}
+.accordion__link:hover {
+  border-bottom: 1px solid rgb(241, 16, 16);
+  transform: scale(1.08);
+}
+.accordion__link:active {
+  color: red;
+}
+.accordion__link:focus {
+  color: rgb(95, 90, 87);
 }
 .accordion__label {
   display: flex;
@@ -91,8 +110,6 @@ h1 {
  justify-content: center;
  background-color: #000;
 }
-
-
   input:checked + .accordion__label {
     background-color: rgba(42, 42, 42, 0.722);
   
@@ -113,8 +130,8 @@ h1 {
   #checkbox-5 {
     display: none;
   }
-
-      #accordion-1:hover .accordion__cross {
+/*#region style for first accordion*/
+/*input:checked + */#accordion-1:hover .accordion__cross {
         display: block;
       }
       #accordion-1:hover ~ #accordion-2 .accordion__open,
@@ -123,3 +140,16 @@ h1 {
       #accordion-1:hover ~ #accordion-5 .accordion__open {
         display: block;
       }
+ /*#endregion*/
+
+ /*#region style for second accordion*/
+ #checkbox-2 input:checked + #accordion-2:hover ~ .accordion__cross {
+  display: block;
+}
+#accordion-2:hover ~ #accordion-1 .accordion__open,
+#accordion-2:hover ~ #accordion-3 .accordion__open,
+#accordion-2:hover ~ #accordion-4 .accordion__open,
+#accordion-2:hover ~ #accordion-5 .accordion__open {
+  display: block;
+}
+ /*#endregion*/
