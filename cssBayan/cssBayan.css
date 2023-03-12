@@ -1,0 +1,125 @@
+body {
+  /* background: linear-gradient(360deg, #914646 0%, #FBBCBC 100%);*/
+  background-color: black;
+  margin: 0 auto;
+padding: 0;
+color: white;
+}
+h1 {
+  line-height: 5%;
+  color: white;
+}
+
+.body__wrapper {
+  margin: 0 auto;
+  padding: 5%;
+}
+.accordion:hover {
+  cursor: pointer;
+}
+
+.header {
+  border-bottom: 1px solid white;
+  margin-bottom: 20px;
+}
+.accordion__line {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion__cross {
+  display: none;
+  width: 2%;
+  height: 2%;
+}
+.accordion__open {
+  width: 2%;
+  height: 2%;
+  display: none;
+}
+
+.accordions { 
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 4px -2px rgba(0,0,0,0.5);
+
+
+}
+.accordion {
+  width: 100%;
+  color: white;
+  overflow: hidden;
+ border-bottom: 1px solid #fff;
+ box-shadow: 1px 2px 25px 1px rgb(153, 151, 151);
+}
+.accordion__label {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  font-weight: bold;
+  cursor: pointer;
+ font-size: 1.5em;
+}
+.accordion__label:hover {
+  color: red;
+}
+.accordion__content {
+  max-height: 0;
+  padding: 0 1em;
+  /*color: blue;*/
+  background: white;
+  transition: all .7s;
+ 
+}
+.accordion__image {
+  width: 100%;
+  max-width: 30vw;
+ /*border: 2px solid black;*/
+ box-shadow: 1px 2px 25px 1px rgb(153, 151, 151);
+ border-radius: 7%;
+
+}
+
+#checkbox-1 ~ .accordion__content {
+  max-height: 100vh;
+  padding: 1em;
+  margin: 0 auto;
+  display: flex;
+ align-items: center;
+ justify-content: center;
+ background-color: #000;
+}
+
+
+  input:checked + .accordion__label {
+    background-color: rgba(42, 42, 42, 0.722);
+  
+  }
+  input:checked ~ .accordion__content {
+    max-height: 100vh;
+    padding: 1em;
+    margin: 0 auto;
+    display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: #000;
+  }
+  #checkbox-1,
+  #checkbox-2,
+  #checkbox-3,
+  #checkbox-4,
+  #checkbox-5 {
+    display: none;
+  }
+
+      #accordion-1:hover .accordion__cross {
+        display: block;
+      }
+      #accordion-1:hover ~ #accordion-2 .accordion__open,
+      #accordion-1:hover ~ #accordion-3 .accordion__open,
+      #accordion-1:hover ~ #accordion-4 .accordion__open,
+      #accordion-1:hover ~ #accordion-5 .accordion__open {
+        display: block;
+      }
